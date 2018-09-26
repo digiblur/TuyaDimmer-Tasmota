@@ -1,5 +1,15 @@
 # TuyaDimmer-Tasmota
-Tuya Dimmer files and changes for Tasmota
+Tuya Dimmer pre-compiled binary and modified source for Tasmota
+
+The bin file is designed for a ESP8266 Tuya 1M dimming device utilizing a second MCU doing the dimming of the lights.  The communication is done via serial over the RX/TX lines of the ESP8266 at 9600-8N1.
+
+Video of the Dimmer and Setup - https://youtu.be/fyxxk2NrKG8
+
+### Parts
+- [WiFi Dimmer Module](https://amzn.to/2zrGCou)
+- [USB FTDI Adapter to Flash the Unit](https://amzn.to/2QXC5AU)
+
+
 
 ### Disclaimer
 :warning: **DANGER OF ELECTROCUTION** :warning:
