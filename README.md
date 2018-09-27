@@ -12,6 +12,7 @@ Video of the Dimmer and Setup - https://youtu.be/fyxxk2NrKG8
 
 ### Example HomeAssistant YAML Configuration:
 
+```
 - platform: mqtt
   name: "TuyaDimTest"
   state_topic: "stat/TuyaDimTest/POWER"
@@ -27,7 +28,7 @@ Video of the Dimmer and Setup - https://youtu.be/fyxxk2NrKG8
   payload_available: "Online"
   payload_not_available: "Offline"
   retain: false
-
+```
 
 ### Disclaimer
 :warning: **DANGER OF ELECTROCUTION** :warning:
