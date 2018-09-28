@@ -11,8 +11,9 @@ Video of the Dimmer and Setup - https://youtu.be/fyxxk2NrKG8
 
 
 ### Example HomeAssistant YAML Configuration:
+Change the brightness template entities to match your entity name as well as the topic names.
 
-```
+```yaml
 - platform: mqtt
   name: "TuyaDimTest"
   state_topic: "stat/TuyaDimTest/POWER"
