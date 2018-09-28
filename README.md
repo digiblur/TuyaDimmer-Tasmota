@@ -21,7 +21,16 @@ Video of the Dimmer and Setup - https://youtu.be/fyxxk2NrKG8
   brightness_state_topic: "stat/TuyaDimTest/RESULT"
   brightness_command_topic: "cmnd/TuyaDimTest/Dimmer"
   brightness_scale: 100
-  brightness_value_template: "{{ value_json.Dimmer }}"
+  brightness_value_template: >
+    {% if value_json.Dimmer is defined %}
+      {{ value_json.Dimmer }}
+    {% else %}
+      {% if state_attr('light.tuyadimtest','brightness') == none %}
+        0
+      {% else %}
+        {{ state_attr('light.tuyadimtest','brightness') / 255 * 100 }}
+      {% endif %}
+    {% endif %}
   qos: 1
   payload_on: "ON"
   payload_off: "OFF"
