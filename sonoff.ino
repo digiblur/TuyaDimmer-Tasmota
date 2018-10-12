@@ -2231,7 +2231,14 @@ void TuyaPacketProcess()
     ExecuteCommand(scmnd, SRC_SWITCH);
     serial_in_byte_counter = 0;
     serial_in_buffer[serial_in_byte_counter] = 0;  // serial data completed
-  }  
+  } 
+  if (serial_in_byte_counter == 8 && serial_in_buffer[3] == 5 && serial_in_buffer[5] == 1 && serial_in_buffer[7] == 5 ) {  // reset WiFi settings packet - find a way to reset red LED after WiFi is up
+    AddLog_P(LOG_LEVEL_DEBUG, PSTR("TYA: WiFi Reset Rcvd"));
+    serial_in_byte_counter = 0;
+    serial_in_buffer[serial_in_byte_counter] = 0;  // serial data completed
+    snprintf_P(scmnd, sizeof(scmnd), D_CMND_WIFICONFIG " 2");
+    ExecuteCommand(scmnd, SRC_BUTTON);
+  }   
 }
 void SerialInput()
 {
@@ -2505,9 +2512,9 @@ void GpioInit()
     baudrate = 19200;
   }
   else if (TUYA_DIMMER == Settings.module) {
-  Settings.flag.mqtt_serial = 0;
-  baudrate = 9600;
-  light_type = LT_SERIAL;
+    Settings.flag.mqtt_serial = 0;
+    baudrate = 9600;
+    light_type = LT_SERIAL;
   }
   else if (SONOFF_BN == Settings.module) {   // PWM Single color led (White)
     light_type = LT_PWM1;
