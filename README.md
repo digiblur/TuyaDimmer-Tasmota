@@ -6,8 +6,9 @@ The bin file is designed for a ESP8266 Tuya 1M dimming device utilizing a second
 Video of the Dimmer and Setup - https://youtu.be/fyxxk2NrKG8
 
 ### Parts
-- [WiFi Dimmer Module](https://amzn.to/2zrGCou)
-- [USB FTDI Adapter to Flash the Unit](https://amzn.to/2QXC5AU)
+- [WiFi Dimmer Module](https://amzn.to/2Oizkb7)
+- If they don't ship to your country - Canadian and maybe others countries shipping model - [WiFi Dimmer Module](https://amzn.to/2PrkPX5)
+- [USB FTDI Adapter to Flash the Unit](https://amzn.to/2Rpu9rx)
 
 
 ### Example HomeAssistant YAML Configuration:
